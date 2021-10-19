@@ -5,7 +5,7 @@ Stampare di nuovo il paragrafo e la sua lunghezza, dopo aver sostituito con tre 
 
 <?php
     // paragrafo
-    $text = 'Lorem ipsum, sit amet consectetur adipisicing elit. Nulla,? Harum ex distinctio enim ipsa sit accusamus, est iure illo molestiae nostrum quos sequi et assumenda emque aliquam. ';
+    $text = 'Lorem ipsum, sit amet consectetur adipisicing elit. Nulla,? Harum ex distinctio enim ipsa sit accusamus, est iure illo molestiae nostrum quos sequi et assumenda emque aliquam.';
 
     // variabile badword
     $badWord = $_GET['badword'];
@@ -24,7 +24,10 @@ Stampare di nuovo il paragrafo e la sua lunghezza, dopo aver sostituito con tre 
 </head>
 <body>
     <p>
-        <?php echo"$text"; ?>
+        <?php echo"$text" ?>
+    </p>
+    <p>
+        <?php echo strlen($text) ?>
     </p>
 </body>
 </html>
