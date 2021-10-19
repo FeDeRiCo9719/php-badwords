@@ -5,13 +5,13 @@ Stampare di nuovo il paragrafo e la sua lunghezza, dopo aver sostituito con tre 
 
 <?php
     // paragrafo
-    $text = 'Lorem ipsum, sit amet consectetur adipisicing elit. Nulla,? Harum ex distinctio enim ipsa sit accusamus, est iure illo molestiae nostrum quos sequi et assumenda emque aliquam.';
+    $text = 'Lorem ipsum, BADWORD sit amet consectetur adipisicing elit. Nulla, BADWORD? Harum ex distinctio enim ipsa BADWORD sit accusamus, est iure illo molestiae BADWORD nostrum quos sequi et assumenda emque aliquam.';
 
     // variabile badword
     $badWord = $_GET['badword'];
 
     // replace badword
-
+    $newText = str_replace($badWord, '***', $text );
 ?>
 
 <!DOCTYPE html>
@@ -23,11 +23,26 @@ Stampare di nuovo il paragrafo e la sua lunghezza, dopo aver sostituito con tre 
     <title>PHP Badwords</title>
 </head>
 <body>
+    <!-- paragrafo -->
+    <h2>Testo:</h2>
     <p>
         <?php echo"$text" ?>
     </p>
+    <h2>Lunghezza testo:</h2>
     <p>
         <?php echo strlen($text) ?>
+    </p>
+
+    <hr>
+
+    <!-- paragrafo censurato-->
+    <h2>Testo:</h2>
+    <p>
+        <?php echo"$newText" ?>
+    </p>
+    <h2>Lunghezza testo:</h2>
+    <p>
+        <?php echo strlen($newText) ?>
     </p>
 </body>
 </html>
